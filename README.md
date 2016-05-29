@@ -1,11 +1,15 @@
 # Versions
 
-- [`5.6.20-fpm-0` (_Dockerfile_)](https://github.com/mageinferno/docker-magento2-php/tree/5.6.20-fpm-0/Dockerfile)
-- [`7.0.5-fpm-0` (_Dockerfile_)](https://github.com/mageinferno/docker-magento2-php/tree/7.0.5-fpm-0/Dockerfile)
+- [`5.6.20-fpm-0` (_Dockerfile_)](https://github.com/ipascual/docker-magento2-php/tree/5.6.20-fpm-0/Dockerfile)
+- [`7.0.5-fpm-0` (_Dockerfile_)](https://github.com/ipascual/docker-magento2-php/tree/7.0.5-fpm-0/Dockerfile)
+
+# Docker Image
+
+- [ipascual/docker-magento2-php](https://hub.docker.com/r/ipascual/docker-magento2-php/)
 
 # Description
 
-This image is built from the official [`php`](https://hub.docker.com/_/php/) repository and contains PHP configurations for Magento 2.
+This repo is a fork from [MagenInferno-Magento2-php](docker hub mageinferno/magento2-php) to apply some changes focused in local development on Magento2.
 
 # What's in this image?
 
