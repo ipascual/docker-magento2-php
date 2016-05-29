@@ -21,7 +21,19 @@ RUN docker-php-ext-install \
   mcrypt \
   pdo_mysql \
   xsl \
-  zip
+  zip \
+  bcmath \
+  soap
+
+ENV XDEBUG_VERSION 2.4.0
+RUN curl -L http://xdebug.org/files/xdebug-$XDEBUG_VERSION.tgz | tar zx
+RUN cd xdebug-$XDEBUG_VERSION \
+  && phpize \
+  && ./configure \
+  && make -j \
+  && make install
+RUN rm -rf "/tmp/xdebug-$XDEBUG_VERSION"
+COPY conf/xdebug.ini /usr/local/etc/php/conf.d/
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer --version=1.0.1
 
@@ -40,5 +52,7 @@ COPY conf/php-fpm.conf /usr/local/etc/
 COPY bin/* /usr/local/bin/
 
 WORKDIR /srv/www
+
+EXPOSE 9000 9001
 
 CMD ["/usr/local/bin/start"]

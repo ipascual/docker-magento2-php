@@ -12,5 +12,8 @@
 # Setup config
 su -c "/usr/local/bin/setup-config" -s /bin/sh www-data
 
+# NFS permissions
+[ ! -z "${USER_UID}" ]         && usermod -u $USER_UID www-data
+
 # Start the php-fpm service
 /usr/local/sbin/php-fpm
